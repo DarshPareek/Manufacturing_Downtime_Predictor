@@ -98,7 +98,7 @@ Setup
 4. Predict Endpoint
 - URL: /predict
 - Method: POST
-- Description: Make a prediction based on input features (Temperature and Run_Time).
+- Description: Make a prediction based on input features (Process temperature [K] and Tool wear [min]).
 - Request Format: JSON.
 - Example Request:
     ```bash
@@ -106,7 +106,7 @@ Setup
 
     curl -X POST http://127.0.0.1:5000/predict \
     -H "Content-Type: application/json" \
-    -d '{"Temperature": 85, "Run_Time": 120}'
+    -d '{"Process temperature [K]": 85, "Tool wear [min]": 120}'
     ```
 - Example Response:
     ```json
@@ -150,7 +150,7 @@ Example Workflow
 
     curl -X POST http://127.0.0.1:5000/predict \
     -H "Content-Type: application/json" \
-    -d '{"Temperature": 85, "Run_Time": 120}'
+    -d '{"Process temperature [K]": 85, "Tool wear [min]": 120}'
     ```
 ## Folder Structure
 ```Copy
@@ -183,3 +183,6 @@ Copy
 
 pip install -r requirements.txt
 ```
+## Dataset
+A test dataset is present in `uploads/final.csv`
+Orginally this was taken from https://www.kaggle.com/datasets/shivamb/machine-predictive-maintenance-classification and cleaned to have 4 columns only.
