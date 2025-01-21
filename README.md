@@ -26,7 +26,7 @@ Before running the project, ensure you have the following installed:
 Setup
 1. Clone the Repository:
     ```bash
-    Copy
+    
 
     git clone https://github.com/your-username/Predictive-Manufacturing-API.git
     cd Predictive-Manufacturing-API
@@ -34,14 +34,14 @@ Setup
 2. Install Dependencies:
     Install the required Python packages using the requirements.txt file:
     ```bash
-    Copy
+    
 
     pip install -r requirements.txt
     ```
 3. Run the Flask Server:
     Start the Flask server by running:
     ```bash
-    Copy
+    
 
     python app.py
     ```
@@ -54,7 +54,7 @@ Setup
 - Description: Welcome message for the API.
 - Example Response:
     ```json
-    Copy
+    
 
     "Welcome to the Manufacturing Predictive Analysis API!"
     ```
@@ -65,13 +65,13 @@ Setup
 - Request Format: Form-data with a file field named file.
 - Example Request:
     ```bash
-    Copy
+    
 
     curl -X POST http://127.0.0.1:5000/upload -F "file=@data/manufacturing_data.csv"
     ```
 - Example Response:
     ```json
-    Copy
+    
 
     {
         "message": "File 'manufacturing_data.csv' uploaded and data loaded successfully!"
@@ -83,13 +83,13 @@ Setup
 - Description: Train the Logistic Regression model on the uploaded data.
 - Example Request:
     ```bash
-    Copy
+    
 
     curl -X POST http://127.0.0.1:5000/train
     ```
 - Example Response:
     ```json
-    Copy
+    
 
     {
         "message": "Model trained and saved successfully!"
@@ -102,7 +102,7 @@ Setup
 - Request Format: JSON.
 - Example Request:
     ```bash
-    Copy
+    
 
     curl -X POST http://127.0.0.1:5000/predict \
     -H "Content-Type: application/json" \
@@ -110,7 +110,7 @@ Setup
     ```
 - Example Response:
     ```json
-    Copy
+    
 
     {
         "Downtime": "Yes",
@@ -130,30 +130,24 @@ Step 3: Make Predictions
 
 Use the /predict endpoint to make predictions based on input features.
 
-Example Workflow
-
-    Upload Data:
-    ```bash
-    Copy
-
-    curl -X POST http://127.0.0.1:5000/upload -F "file=@data/manufacturing_data.csv"
-    ```
-    Train the Model:
-    ```bash
-    Copy
-
-    curl -X POST http://127.0.0.1:5000/train
-    ```
-    Make a Prediction:
-    ```bash
-    Copy
-
-    curl -X POST http://127.0.0.1:5000/predict \
+#### Example Workflow
+- Upload Data:
+  ```
+  curl -X POST http://127.0.0.1:5000/upload -F "file=@data/manufacturing_data.csv"
+  ```
+- Train the Model:
+  ```
+  curl -X POST http://127.0.0.1:5000/train
+  ```
+- Make a Prediction:
+  ```
+  curl -X POST http://127.0.0.1:5000/predict \
     -H "Content-Type: application/json" \
     -d '{"Process temperature [K]": 85, "Tool wear [min]": 120}'
-    ```
+  ```
+    
 ## Folder Structure
-```Copy
+```
 
 Predictive-Manufacturing-API/
 │
@@ -179,7 +173,7 @@ The project uses the following Python packages:
 
 Install the dependencies using:
 ```bash
-Copy
+
 
 pip install -r requirements.txt
 ```
